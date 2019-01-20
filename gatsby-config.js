@@ -35,7 +35,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-prismjs`,
+        ],
+      },
+    },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-sass`,
     {

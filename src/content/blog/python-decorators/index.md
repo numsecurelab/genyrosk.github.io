@@ -12,3 +12,19 @@ def add_two(n):
   return n + 2
 
 ```
+
+More code:
+
+``` javascript
+
+var x = 10
+
+const timesTwo = (x) => x * 2
+
+```
+
+In the terminal: 
+
+``` shell
+git push -u origin master
+```
