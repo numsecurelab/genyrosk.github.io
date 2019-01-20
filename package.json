@@ -26,6 +26,8 @@
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.18",
     "typography": "^0.16.18",
+    "typography-theme-fairy-gates": "^0.16.18",
+    "typography-theme-funston": "^0.16.18",
     "typography-theme-st-annes": "^0.16.18"
   },
   "keywords": [

@@ -5,15 +5,17 @@ import { rhythm } from "../utils/typography"
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
+import styles from './index.module.scss'
+
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
   return (
     <Layout>
       <SEO title="Home" keywords={[`evgeny`, `blog`, `python`, `data science`]} />
-      <div>
+      <div className={styles.blogpostsList} >
         {data.allMarkdownRemark.edges.map( ({ node }) => {
           return (
-            <div key={node.id}>
+            <div key={node.id} className={styles.blogpost}>
               <Link
                 to={node.fields.slug}
                 css={css`
@@ -23,17 +25,21 @@ const IndexPage = ({ data }) => {
                 >
                 <h3
                   css={css`
-                    margin-bottom: ${rhythm(1/4)};
+                    margin-top: ${rhythm(1/1)};
+                    margin-bottom: ${rhythm(1/3)};
                   `}>
-                  {node.frontmatter.title}{" "}
-                  <span
-                    css={css`
-                      color: #bbb;
-                    `}
-                  >
-                  - {node.frontmatter.date}
-                </span>
+                  {node.frontmatter.title}
                 </h3>
+                <h4
+                  css={css`
+                    color: #777;
+                    margin-top: 0;
+                    margin-bottom: ${rhythm(1/2)};
+                  `}
+                  >
+                  {node.frontmatter.date} &#183;{" "}
+                  {node.timeToRead} min read
+                </h4>
                 <p>{node.excerpt}</p>
               </Link>
             </div>
@@ -57,7 +63,8 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt(pruneLength: 160)
+          excerpt(pruneLength: 500)
+          timeToRead
           fields {
             slug
           }
