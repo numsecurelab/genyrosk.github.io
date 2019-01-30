@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import { Header, MiniHeader } from './header'
-// import './layout.css'
+import styles from './layout.module.scss'
 
 const Layout = ({ children, miniHeader }) => (
   <StaticQuery
@@ -19,14 +19,7 @@ const Layout = ({ children, miniHeader }) => (
     render={data => (
       <>
         {miniHeader ? <MiniHeader /> : <Header siteTitle={data.site.siteMetadata.title} />}
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: `800px`,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
-        >
+        <div className={styles.layout}>
           {children}
           <footer
             style={{
