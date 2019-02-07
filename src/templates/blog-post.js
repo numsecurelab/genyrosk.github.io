@@ -1,14 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+import Tags from "../components/tags"
 
 import styles from "./blog-post.module.scss"
-
-const Tag = ({ tag }) => (
-  <span className={styles.tag}>
-    {tag}
-  </span>
-)
 
 const NavLink = ({ title, path }) => (
   <div className={styles.navlinkdiv}>
@@ -24,16 +19,17 @@ export default ({ data, pageContext }) => {
   const {
     html,
     timeToRead,
-    frontmatter: {date, title},
+    frontmatter: {date, title, tags},
   } = data.markdownRemark
 
   console.log(data)
-  console.log(next.fields.slug, next.frontmatter.title)
+  console.log(pageContext)
 
   return (
     <Layout miniHeader={true}>
       <div className={styles.article}>
         <h1>{title}</h1>
+        <Tags tags={tags} />
         <h4>{date} <span> &#183; </span> {timeToRead} min read</h4>
         <div className={styles.content} dangerouslySetInnerHTML={{ __html: html }} />
       </div>

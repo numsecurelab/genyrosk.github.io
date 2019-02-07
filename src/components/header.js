@@ -26,7 +26,7 @@ const Title = ({ className }) => (
 
 const DescriptionParagraph = () => (
   <p>
-    Data Scientist in Market Research, Deliveroo. <br/>
+    Data Scientist in Market Research @Deliveroo. <br/>
     In love with Python, Stats, AI/ML, data and surfing. <br/>
     I automate the boring stuff and build neural nets for fun.
   </p>

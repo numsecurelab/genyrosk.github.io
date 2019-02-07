@@ -1,0 +1,25 @@
+.tag {
+  padding: 0.1rem 0.5rem;
+  margin: 0rem 0.2rem;
+  background-color: #376996;// #1D3461 #1F487E #376996 #6290C8 #829CBC
+  color: white;
+  font-size: 13px;
+}
+
+.tagslist {
+
+}
+
+
+.tag:before {
+   content:"";
+   float:left;
+   position:relative;
+   top:0;
+   left:-12px;
+   width:0;
+   height:0;
+   border-color:transparent #0089e0 transparent transparent;
+   border-style:solid;
+   border-width:12px 12px 12px 0;
+}

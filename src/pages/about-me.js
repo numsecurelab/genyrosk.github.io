@@ -17,7 +17,7 @@ const SecondPage = () => (
           I'm a Data Scientist in market research @Deliveroo.
           I focus on researching, building and
           productionising ML models in a scalable way.
-          I don't build AI systems for the sake of it, at Deliveroo they serve
+          I don't build AI systems for the sake of it, they serve
           a very specific purpose: automation via curve-fitting.
         </p>
         <p>
