@@ -21,6 +21,13 @@ const SecondPage = () => (
           a very specific purpose: automation via curve-fitting.
         </p>
         <p>
+          To quote Jeremy Kepner, Head and Founder of the MIT Lincoln Laboratory Supercomputing Center:
+        </p>
+        <blockquote>
+          People have said: Neural Networks, Machine Learning it’s just curve fitting.
+          Yes, but it’s curve fitting without domain knowledge.
+        </blockquote>
+        <p>
           If time is money and markets value efficiency, then automation is about improving
           efficiency by saving time. In today's emoji communication: <span style={{fontSize: `18px`}}>🤖 = 💸</span>.
           Thus, I believe that if something can be automated, then it <b>must</b> be
