@@ -4,11 +4,19 @@ import Layout from "../components/layout"
 import Tags from "../components/tags"
 
 import styles from "./blog-post.module.scss"
+import tagIcon from '../content/assets/tag.svg'
+import calendarIcon from '../content/assets/calendar-clock.svg'
 
-const NavLink = ({ title, path }) => (
+const NavLink = ({ title, path, type }) => (
   <div className={styles.navlinkdiv}>
     <Link to={path}>
+      <span style={{marginRight:`7px`}}>
+        { type == 'prev' ? '← previous: ' : 'next: '}
+      </span>
       {title}
+      <span style={{marginLeft:`7px`}}>
+        { type == 'next' ? '→' : ''}
+      </span>
     </Link>
   </div>
 )
@@ -22,24 +30,41 @@ export default ({ data, pageContext }) => {
     frontmatter: {date, title, tags},
   } = data.markdownRemark
 
-  console.log(data)
-  console.log(pageContext)
+  // console.log(data)
+  // console.log(pageContext)
 
   return (
     <Layout miniHeader={true}>
       <div className={styles.article}>
-        <h1>{title}</h1>
-        <Tags tags={tags} />
-        <h4>{date} <span> &#183; </span> {timeToRead} min read</h4>
+        <div style={{marginBottom:`40px`}}>
+          <h1>{title}</h1>
+          <div className={styles.tagsWrapper}>
+            <div className={styles.tagIcon}>
+              <img alt="date" src={tagIcon} width={20}/>
+            </div>
+            <div className={styles.tags}>
+              <Tags tags={tags} />
+            </div>
+          </div>
+          <div className={styles.dateWrapper}>
+            <div className={styles.dateIcon}>
+              <img alt="date" src={calendarIcon} width={20}/>
+            </div>
+            <div className={styles.dateText}>
+              {date} <span> &#183; </span> {timeToRead} min read
+            </div>
+          </div>
+        </div>
         <div className={styles.content} dangerouslySetInnerHTML={{ __html: html }} />
       </div>
 
       <div className={styles.navlinks}>
         <div className={styles.navprev}>
-          { prev && (
+           { prev && (
             <NavLink
               title={prev.frontmatter.title}
               path={prev.fields.slug}
+              type='prev'
             />
           )}
         </div>
@@ -48,6 +73,7 @@ export default ({ data, pageContext }) => {
             <NavLink
               title={next.frontmatter.title}
               path={next.fields.slug}
+              type='next'
             />
           )}
         </div>

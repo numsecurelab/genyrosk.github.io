@@ -2,6 +2,30 @@
   margin: 0 auto;
   max-width: 800px;
   padding: 0 1.0875rem 1.45rem;
+
+  blockquote {
+    background: #f9f9f9;
+    font-style: italic;
+    border-left: 10px solid #bbb;
+    margin: 1.5em 0.5rem;
+    padding: 0.4rem 1rem;
+    quotes: "\201C""\201D""\2018""\2019";
+    font-size: 1rem;
+  }
+
+  blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    // content: close-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.2em;
+    vertical-align: -0.4em;
+  }
+
+  blockquote p {
+    display: inline;
+  }
 }
 
 

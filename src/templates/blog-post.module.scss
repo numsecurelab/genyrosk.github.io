@@ -1,28 +1,98 @@
+$width: 650px;
+
 .article {
-  max-width: 650px;
+  max-width: $width;
   margin: 0 auto;
+  margin-bottom: 2rem;
+  padding: 0 0.6rem;
+  padding-bottom: 1.5rem;
+  // border-bottom: 1.0px dashed grey;
+  box-shadow: 0px 20px 10px -10px rgba(0,0,0,.04);
+  // box-shadow: 0 8px 6px -6px black;
 }
 
 .content {
 
 }
 
-.tag {
+.dateWrapper {
+  color: #67717D;
+  // color: rgba(0,0,0,.54)
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 
+  .dateIcon {
+    // display:inline-block;
+    margin-top:0px;
+
+    img {
+      margin: 0;
+      filter: invert(0.6);
+      display: inline;
+      margin-top: 8px;
+    }
+  }
+
+  .dateText {
+    // display:inline-block;
+    font-size: 14px;
+    margin-top:8px;
+    margin-left: 14px;
+  }
+}
+
+.tagsWrapper {
+  color: #67717D;
+  // color: rgba(0,0,0,.54)
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .tagIcon {
+    // display:inline-block;
+    margin-top:0px;
+
+    img {
+      margin: 0;
+      filter: invert(0.6);
+      display: inline;
+      margin-top: 10px;
+    }
+  }
+
+  .tags {
+    // display:inline-block;
+    margin-top: 8px;
+    margin-left: 14px;
+  }
 }
 
 .navlinks {
-
+  max-width: $width;
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
 }
 
 .navprev {
-
+  display: inline-block;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
 }
 
 .navnext {
-
+  display: inline-block;
+  margin-left: 2rem;
+  float: right
 }
 
 .navlinkdiv {
 
+  a:hover {
+    text-decoration: underline;
+  }
 }

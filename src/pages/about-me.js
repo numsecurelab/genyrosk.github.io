@@ -7,7 +7,7 @@ import SEO from '../components/seo'
 const SecondPage = () => (
   <Layout miniHeader={true}>
     <SEO title="About me"/>
-    <div style={{maxWidth: `650px`}}>
+    <div style={{maxWidth: `650px`, padding: `0 0.6rem`}}>
       <h1>About</h1>
         {/* <p>
           Barcelona is my hometown and I'm an avid fan of our football team.
@@ -24,14 +24,17 @@ const SecondPage = () => (
           To quote Jeremy Kepner, Head and Founder of the MIT Lincoln Laboratory Supercomputing Center:
         </p>
         <blockquote>
-          People have said: Neural Networks, Machine Learning it’s just curve fitting.
-          Yes, but it’s curve fitting without domain knowledge.
+          The power of neural networks is they don’t require you to a priori state
+          what the inputs can be. They can be anything.
+          People have said "neural networks, machine learning - it’s just curve fitting".  <br/>
+          Yes, but it’s <b style={{fontWeight:`1000`, textDecoration:`underline`}}>curve fitting without domain knowledge</b>.
+          Domain knowledge is so costly and expensive to create, that having a
+          general system is really powerful.
         </blockquote>
         <p>
-          If time is money and markets value efficiency, then automation is about improving
-          efficiency by saving time. In today's emoji communication: <span style={{fontSize: `18px`}}>🤖 = 💸</span>.
-          Thus, I believe that if something can be automated, then it <b>must</b> be
-          automated. At some point. Somewhat. Perhaps.
+          For me machine learning goes hand in hand with automation and I simply follow the well known
+          emoji equation <span style={{fontSize: `18px`}}>🤖 = 💸</span>. If something can be automated,
+          then it must be automated. At some point. Somewhat. Perhaps.
         </p>
         {/* <p>
           I can speak 7 languages: Russian, Spanish, French, English,
@@ -53,9 +56,9 @@ const SecondPage = () => (
           The purpose of this blog is to spread Python love and to share interesting
           insights into the world of Data Science. 🐍📊
         </p>
-
+        
+        <Link to="/">Homepage</Link>
     </div>
-    <Link to="/">Homepage</Link>
   </Layout>
 )
 
