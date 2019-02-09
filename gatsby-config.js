@@ -1,10 +1,10 @@
 module.exports = {
+  pathPrefix: "/",
   siteMetadata: {
     title: `Evgeny's journey`,
     description: `A blog dedicated to my projects and experiences as a programmer and data scientist.`,
     author: `@genyrosk`,
   },
-  pathPrefix: "/",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
