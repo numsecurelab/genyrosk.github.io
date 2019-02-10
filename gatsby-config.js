@@ -60,11 +60,18 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     //trackingId: `ADD YOUR TRACKING ID HERE`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-134214549-1",
+        head: false, // Puts tracking script in the head instead of the body
+        anonymize: true, //optional
+        respectDNT: true, // optional
+        // Any additional create only fields (optional)
+        // sampleRate: 5,
+        // siteSpeedSampleRate: 10,
+        // cookieDomain: "example.com",
+      },
+    },
   ],
 }
