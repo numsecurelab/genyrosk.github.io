@@ -46,7 +46,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-emotion`,
-    `gatsby-plugin-sass`,
+    {
+      resolve:`gatsby-plugin-sass`,
+      options: {
+        cssLoaderOptions: {
+          camelCase: false,
+        }
+      }
+    },
     {
       resolve: `gatsby-plugin-typography`,
       options: {

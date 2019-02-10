@@ -1,0 +1,32 @@
+.nav {
+  display: grid;
+  grid-template-columns: 70px 80px auto;
+  grid-template-rows: auto;
+  align-items: center;
+  padding: 0.3rem 0.3rem;
+  margin: 0 auto;
+  margin-bottom: 1.45rem;
+  max-width: 800px;
+}
+
+.miniProfile {
+  justify-self: center;
+  max-width: 50px;
+
+  a {
+    display: table-cell;
+  }
+
+  img {
+    margin-bottom: 0;
+  }
+}
+
+.miniTitle {
+  justify-self: left;
+
+  h1 {
+    font-size: 18px;
+    margin: 0 0.7rem;
+  }
+}

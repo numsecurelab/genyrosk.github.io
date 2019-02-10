@@ -1,6 +1,5 @@
 import React from 'react'
-
-import styles from './tags.module.scss'
+import styles from './Tags.module.scss'
 
 const Tags = ({ tags }) => (
   <div className={styles.tagslist}>

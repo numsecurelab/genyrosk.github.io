@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
-import Tags from "../components/tags"
+import Layout from "../components/Layout"
+import Tags from "../components/Tags"
 
 import styles from "./blog-post.module.scss"
 import tagIcon from '../content/assets/tag.svg'

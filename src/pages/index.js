@@ -2,8 +2,8 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 
 import styles from './index.module.scss'
 

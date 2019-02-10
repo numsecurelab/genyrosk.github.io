@@ -1,0 +1,17 @@
+.contacts__list {
+  line-height: 0;
+
+  &-item {
+    display: inline-block;
+    margin-right: 0.5rem;
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+      fill: black;
+      &:hover {
+        fill: rgba(97, 132, 216, .99);
+      }
+    }
+  }
+}
