@@ -2,10 +2,15 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Tags from "../components/Tags"
+import Icon from "../components/Icon"
 
 import styles from "./blog-post.module.scss"
 import tagIcon from '../content/assets/tag.svg'
 import calendarIcon from '../content/assets/calendar-clock.svg'
+
+import { BLOG_ICONS } from '../constants'
+
+console.log(BLOG_ICONS)
 
 const NavLink = ({ title, path, type }) => (
   <div className={styles.navlinkdiv}>
@@ -40,7 +45,8 @@ export default ({ data, pageContext }) => {
           <h1>{title}</h1>
           <div className={styles.tagsWrapper}>
             <div className={styles.tagIcon}>
-              <img alt="date" src={tagIcon} width={20}/>
+              {/* <img alt="tag" src={tagIcon} width={20}/> */}
+              <Icon alt="tag" icon={BLOG_ICONS['TAG']}/>
             </div>
             <div className={styles.tags}>
               <Tags tags={tags} />
@@ -48,7 +54,8 @@ export default ({ data, pageContext }) => {
           </div>
           <div className={styles.dateWrapper}>
             <div className={styles.dateIcon}>
-              <img alt="date" src={calendarIcon} width={20}/>
+              {/* <img alt="date" src={calendarIcon} width={20}/> */}
+              <Icon alt="tag" icon={BLOG_ICONS['CALENDAR']}/>
             </div>
             <div className={styles.dateText}>
               {date} <span> &#183; </span> {timeToRead} min read
