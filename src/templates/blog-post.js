@@ -44,13 +44,14 @@ export default ({ data, pageContext }) => {
         <div style={{marginBottom:`40px`}}>
           <h1>{title}</h1>
           <div className={styles.tagsWrapper}>
-            <div className={styles.tagIcon}>
-              {/* <img alt="tag" src={tagIcon} width={20}/> */}
+            {/* <div className={styles.tagIcon}>
+              <img alt="tag" src={tagIcon} width={20}/>
               <Icon alt="tag" icon={BLOG_ICONS['TAG']}/>
             </div>
             <div className={styles.tags}>
               <Tags tags={tags} />
-            </div>
+            </div> */}
+            <Tags tags={tags} />
           </div>
           <div className={styles.dateWrapper}>
             <div className={styles.dateIcon}>
