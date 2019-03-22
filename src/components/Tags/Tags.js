@@ -7,20 +7,20 @@ console.log(BLOG_ICONS)
 
 const Tags = ({ tags }) => (
   <div className={styles['tags']}>
-    <div className={styles['tags__list']}>
+    <ul className={styles['tags__list']}>
       {/* {console.log(tags)} */}
       {tags.map( (tag, index) => (
-        <div key={index} className={styles['tags__list-item']}>
-          <div className={styles['tags__list-item-icon']}>
+        <li key={index} className={styles['tags__list-item']}>
+          <span className={styles['tags__list-item-icon']}>
             <Icon alt="tag" icon={BLOG_ICONS['TAG']}/>
-          </div>
-          <div>
+          </span>
+          <span>
             {/* <span className={styles.hashtag}>#</span>  */}
             {tag}
-          </div>
-        </div>
+          </span>
+        </li>
       ))}
-    </div>
+    </ul>
   </div>
 )
 
