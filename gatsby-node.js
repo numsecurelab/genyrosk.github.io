@@ -31,7 +31,7 @@ exports.createPages = ({ graphql, actions }) => {
     graphql(`
       {
         allMarkdownRemark (
-          sort: { fields: [frontmatter___date], order: DESC }
+          sort: { fields: [frontmatter___date], order: ASC }
           filter: { frontmatter: { published: { eq: true } } }
         ) {
           totalCount
