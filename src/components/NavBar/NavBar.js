@@ -2,7 +2,7 @@ import React from 'react'
 import Title from '../Title'
 import Contacts from '../Contacts'
 import styles from './NavBar.module.scss'
-import profileImage from '../../content/assets/profile_pic_888.jpg'
+import profileImage from '../../assets/img/profile_pic_888.jpg'
 
 const NavBar = () => (
   <div className={styles.wrapper} style={{boxShadow: `10px 9px 14px rgba(0,0,0,.04)`}}>

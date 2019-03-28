@@ -17,11 +17,9 @@ Imagine we have some API endpoint. We will simulate the behaviour of that endpoi
 
 ```python
 import time
-
 def api_endpoint(seconds=1):
     time.sleep(seconds)
     return 'API response'
-
 ```
 
 Let's say that in our application we have a function that performs a request to this api endpoint and subsequently returns the result.
@@ -307,7 +305,7 @@ It helps with debugging. Keep this in mind when you're writing open source code 
 With a little bit of care, you can also define decorators that can be used both with and without arguments. Most likely, you don’t need this, but it is nice to have the flexibility.
 
 
-```python
+```python{19-24}
 from functools import wraps
 
 def time_me(_func=None, *, milliseconds=False):

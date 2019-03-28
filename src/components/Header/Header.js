@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import Title from '../Title'
 import Contacts from '../Contacts'
 import styles from './Header.module.scss'
-import profileImage from '../../content/assets/profile_pic_888.jpg'
+import profileImage from '../../assets/img/profile_pic_888.jpg'
 
 const DescriptionParagraph = () => (
   <p>
