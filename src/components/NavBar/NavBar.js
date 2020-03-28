@@ -10,9 +10,9 @@ const NavBar = () => (
       <div className={styles.miniProfile}>
         <img alt="" style={{borderRadius: `50%`}} src={profileImage}/>
       </div>
-      <div style={{justifySelf: `right`}}>
-        <Contacts />
-      </div>
+      {/* <div style={{justifySelf: `right`}}>
+        <Contacts showNames={false} />
+      </div> */}
       <Title className={styles.miniTitle}/>
     </div>
   </div>

@@ -1,10 +1,11 @@
 .nav {
   display: grid;
-  grid-template-columns: 70px 80px auto;
+  grid-template-columns: 70px auto;
   grid-template-rows: auto;
   align-items: center;
-  padding: 0.3rem 0.3rem;
-  margin: 0 auto;
+  // padding: 0.3rem 0.3rem;
+  padding: 0.3725rem 1.0875rem;
+  // margin: 0 auto;
   margin-bottom: 1.45rem;
   max-width: 800px;
 }

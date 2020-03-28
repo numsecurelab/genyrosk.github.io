@@ -1,17 +1,35 @@
-.contacts__list {
-  line-height: 0;
+// $base-color: rgba(40, 40, 40, 0.99);
+// $invereted-color: rgba(255, 255, 255, 0.99);
 
-  &-item {
-    display: inline-block;
-    margin-right: 0.5rem;
+// .contacts__list {
+//   line-height: 0;
+
+//   >a {
+//     display: inline-block;
+//     margin: 0 5px;
+//   }
+// }
+
+.contact {
+  // background-color: $invereted-color;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 2px 6px 2px;
+  // color: $base-color;
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    // fill: $base-color;
+  }
+
+  &:hover {
+    // background-color: $base-color;
+    // color: $invereted-color;
 
     svg {
-      width: 2rem;
-      height: 2rem;
-      fill: black;
-      &:hover {
-        fill: rgba(97, 132, 216, .99);
-      }
+      // fill: $invereted-color;
     }
   }
 }

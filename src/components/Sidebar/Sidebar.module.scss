@@ -1,0 +1,123 @@
+.sidebar {
+  background-color: rgb(255, 255, 255);
+  box-shadow: -8px 9px 14px rgba(0, 0, 0, 0.06);
+  padding: 85px 45px 0 10px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  min-height: 100vh;
+  width: 265px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.spring-btn {
+  &__wrapper {
+    position: absolute;
+    top: 18px;
+    right: 40px;
+    z-index: 12;
+  }
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    .btn {
+      height: 28px;
+      width:  28px;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // border: 1px solid black;
+      background-color: transparent;
+    }
+
+    .animated {
+      position: absolute;
+      cursor: pointer;
+      will-change: transform, opacity;
+
+      svg {
+        fill: rgb(80, 80, 80);
+
+        &:hover {
+          fill: rgb(40, 40, 40);
+        }
+      }
+
+      
+    }
+  }
+
+}
+
+/**
+ * Customize the contacts coloring and display logic
+ */
+
+// color variables
+$base-color: rgba(100, 100, 100, 1.0);
+$darker-color: rgba(20, 20, 20, 1.0);
+
+.contacts__list {
+  line-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  >a {
+    display: inline-block;
+
+    >div {
+      border-radius: 5px;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      padding: 2px 0px 2px;
+      color: $base-color;
+      margin-top: 5px;
+
+      span {
+        margin-right: 8px;
+      }
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+        fill: $base-color;
+      }
+
+      &:hover {
+        color: $darker-color;
+
+        svg {
+          fill: $darker-color;
+        }
+      }
+    }
+  }
+}
+
+.delimeter {
+  background: rgb(220, 220, 220);
+  margin: 25px 2px;
+  height: 8px;
+  width: 80px;
+}
+
+.link {
+  margin: 8px 3px;
+  color: $base-color;
+
+  :hover {
+    color: $darker-color;
+  }
+}

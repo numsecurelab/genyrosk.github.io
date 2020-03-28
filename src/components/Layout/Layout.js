@@ -4,7 +4,8 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from '../Header'
 import NavBar from '../NavBar'
-import styles from './layout.module.scss'
+import Sidebar from '../Sidebar'
+import styles from './Layout.module.scss'
 
 const Layout = ({ children, miniHeader }) => (
   <StaticQuery
@@ -19,13 +20,21 @@ const Layout = ({ children, miniHeader }) => (
     `}
     render={data => (
       <>
-        {miniHeader ? <NavBar /> : <Header siteTitle={data.site.siteMetadata.title} />}
+        {miniHeader ? (
+          <NavBar />
+        ) : (
+          <Header siteTitle={data.site.siteMetadata.title} />
+        )}
+        <Sidebar />
         <div className={styles.layout}>
-          {children}
+          <div className={styles.content}>
+            {children}
+          </div>
           <footer
             style={{
               textAlign: `center`,
-            }}>
+            }}
+          >
             © Evgeny Roskach
           </footer>
         </div>
@@ -34,10 +43,9 @@ const Layout = ({ children, miniHeader }) => (
   />
 )
 
-
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  miniHeader: PropTypes.bool
+  miniHeader: PropTypes.bool,
 }
 
 Layout.defaultProps = {

@@ -3,6 +3,10 @@
   max-width: 800px;
   padding: 0 1.0875rem 1.45rem;
 
+  .content {
+    min-height: 80vh;
+  }
+
   blockquote {
     background: #f9f9f9;
     font-style: italic;

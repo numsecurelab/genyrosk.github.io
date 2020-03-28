@@ -1,21 +1,21 @@
-import React from 'react';
-// import styles from './Icon.module.scss';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Icon = ({ icon }) => {
-  const SVG = (
-    <svg className={''} viewBox={icon.viewBox}>
+  return (
+    <svg viewBox={icon.viewBox}>
       <path d={icon.path} />
     </svg>
   )
-  if (icon.url) {
-    return (
-      <a href={icon.url} target='_blank'>
-        {SVG}
-      </a>
-    )
-  } else {
-    return SVG
-  }
+}
+
+Icon.proptype = {
+  icon: PropTypes.shape(
+    PropTypes.objectOf({
+      path: PropTypes.string.isRequired,
+      viewBox: PropTypes.string.isRequired,
+    })
+  ),
 }
 
 export default Icon

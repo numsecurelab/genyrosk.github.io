@@ -1,25 +1,19 @@
 .wrapper {
-  background: #white; // #6184D8, #005a94, #404bb3, #3962cb, #264491
-  // -webkit-box-shadow: 0 4px 12px 0 rgba(0,0,0,.25);
-  // box-shadow: 0 4px 12px 0 rgba(0,0,0,.25);
+  background: white;
 }
 
 /* We tell all items to be 100% width, via flex-basis */
 .container {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto auto;
-  margin: 0 auto;
-  margin-bottom: 1.45rem;
-  max-width: 700px;
-  padding: 1rem 1rem;
-
   // -webkit-box-shadow: 0 4px 12px 0 rgba(0,0,0,.25);
   // box-shadow: 0px 3px 12px 0px rgba(0,0,0,.25);
   // box-shadow: 10px 9px 14px rgba(0,0,0,.04);
-  box-shadow: 4px 9px 19px -9px rgba(46,46,46,0.15);
-  border-radius: 5px;
-  margin-top:10px;
+  box-shadow: 4px 9px 19px -9px rgba(46, 46, 46, 0.08);
+  // border-bottom: 1px solid rgb(220, 220, 220);
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto 1.45rem;
+  padding: 1rem 1rem;
+  align-items: center;
 }
 
 /* We rely on source order for desktop-first approach
@@ -28,10 +22,9 @@
  * 2. title
  * 3. description
  */
-
 .profile {
   min-width: 70px;
-  max-width: 100px;
+  max-width: 150px;
   margin: 1rem 1rem 1rem 1rem;
 
   img {
@@ -40,45 +33,71 @@
 }
 
 .title {
-  align-self: center;
-  min-width: 100px;
-  max-width: 300px;
-  margin: 0rem 1rem 0rem 1rem;
+  margin: 0rem 1rem;
+
+  h1 {
+    font-size: 1.875rem;
+    margin: 0;
+  }
 }
 
 .description {
-  min-width: 200px;
-  max-width: 480px;
   margin: 1rem 1rem 1rem 1rem;
+}
 
-  a:hover {
-    text-decoration: underline;
-  }
 
-  p {
-    font-size: 18px;
-    color: black; // white
-    text-decoration: none;
+/**
+ * Customize the contacts coloring and display logic
+ */
+.contacts__list {
+  line-height: 0;
+
+  // color variables
+  $base-color: rgba(40, 40, 40, 0.99);
+  $invereted-color: rgba(255, 255, 255, 0.99);
+
+  >a {
+    display: inline-block;
+    margin: 0 5px;
+
+    >div {
+      background-color: $invereted-color;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      padding: 2px 6px 2px;
+      color: $base-color;
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+        fill: $base-color;
+      }
+
+      &:hover {
+        background-color: $base-color;
+        color: $invereted-color;
+
+        svg {
+          fill: $invereted-color;
+        }
+      }
+    }
   }
 }
 
 /* All screens (small ones first) */
-@media all {
-  .container{grid-template-columns: auto auto }
-  .profile     {grid-area: 1 / 1 / span 1 / span 2;}
-  .title       {grid-area: 2 / 1 / span 1 / span 2;}
-  .description {grid-area: 3 / 1 / span 1 / span 2;}
-  .profile     { place-self: center; }
-  .title       { place-self: center; }
-  .description { place-self: center; }
-}
+@media all {}
 
 /* Only small and Medium screens */
-@media all and (max-width: 600px) {
+@media all and (max-width: 780px) {
+  .profile {
+    max-width: 100px;
+  }
+
   .title {
     h1 {
-      margin-top: 0.3575rem;
-      margin-bottom: 0.9125rem;
+      font-size: 1.725rem;
     }
   }
 }
@@ -86,19 +105,19 @@
 /* Medium screens */
 @media all and (min-width: 460px) {
   // .container{grid-template-columns: 1fr 3fr;}
-  .title {
-    place-self: center;
-    margin-right: 7%;
-  }
+  // .title {
+  //   place-self: center;
+  //   margin-right: 7%;
+  // }
 }
 
 /* Large screens */
 @media all and (min-width: 600px) {
-  .container{grid-template-columns: 5fr 9fr;}
-  .profile     {grid-area: 1 / 1 / span 1 / span 1;}
-  .title       {grid-area: 1 / 2 / span 1 / span 1;}
-  .description {grid-area: 2 / 1 / span 1 / span 2;}
-  .profile     { justify-self: right; }
-  .title       { justify-self: left; }
-  .description { place-self: center; }
+  // .container{grid-template-columns: 5fr 9fr;}
+  // .profile     {grid-area: 1 / 1 / span 1 / span 1;}
+  // .title       {grid-area: 1 / 2 / span 1 / span 1;}
+  // .description {grid-area: 2 / 1 / span 1 / span 2;}
+  // .profile     { justify-self: right; }
+  // .title       { justify-self: left; }
+  // .description { place-self: center; }
 }
