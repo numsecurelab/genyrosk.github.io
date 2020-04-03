@@ -3,7 +3,6 @@ import styles from './Tags.module.scss'
 
 import Icon from '../Icon'
 import { BLOG_ICONS } from '../../constants'
-console.log(BLOG_ICONS)
 
 const Tags = ({ tags }) => (
   <div className={styles['tags']}>
