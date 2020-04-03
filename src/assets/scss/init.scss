@@ -1,3 +1,6 @@
+body {
+  font-size: 1.125rem;
+}
 
 /**
  * CODE HIGHLIGHTING with Prism js
@@ -23,6 +26,7 @@
   margin: 0.5em 0;
   padding: 1em;
   overflow: auto;
+  font-size: 1rem;
 }
 
 /**
@@ -37,14 +41,67 @@
   margin: 0;
   padding: 0;
   overflow: initial;
-  float: left; /* 1 */
-  min-width: 100%; /* 2 */
+  float: left; // 1
+  min-width: 100%; // 2 
+}
+
+/* Adjust the position of the line numbers */
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding-left: 2.8em;
 }
 
 /**
  * For improved mobile experience, override white-spaces
  * attribute to disable horiztonal scrolling on code blocks
  */
- code[class*="language-"] {
-   white-space: pre-wrap;
- }
+code[class*="language-"] {
+  font-size: 0.8725em;
+}
+
+pre[class*="language-"] {
+  white-space: pre-wrap;
+}
+
+@media (max-width: 570px) {
+  pre[class*="language-"] {
+    font-size: 0.8585em;
+  }
+
+  .gatsby-highlight {
+    padding: 0.5em;
+  }
+}
+
+@media (max-width: 400px) {
+  pre[class*="language-"] {
+    font-size: 0.7585em;
+  }
+  .gatsby-highlight {
+    padding: 0.1em;
+  }
+}
+
+
+/**
+ * A fancy prompt on anything with `shell` or `bash`
+ */
+.command-line-prompt>span:before {
+  color: #999;
+  content: " ";
+  display: block;
+  padding-right: 0.8em;
+}
+
+/* Prompt for all users */
+.command-line-prompt>span[data-user]:before {
+  content: "["attr(data-user) "@"attr(data-host) "] $";
+}
+
+/* Prompt for root */
+.command-line-prompt>span[data-user="root"]:before {
+  content: "["attr(data-user) "@"attr(data-host) "] #";
+}
+
+.command-line-prompt>span[data-prompt]:before {
+  content: attr(data-prompt);
+}

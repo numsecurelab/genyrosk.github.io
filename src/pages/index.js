@@ -43,7 +43,15 @@ const IndexPage = ({ data }) => {
                 >
                   {node.frontmatter.date} &#183; {node.timeToRead} min read
                 </h4>
-                <p>{node.excerpt}</p>
+                {/* <p>{node.excerpt}</p> */}
+                {/* <div
+                  className={styles.excerpt}
+                  dangerouslySetInnerHTML={{ __html: node.excerpt }}
+                /> */}
+                <div
+                  className={styles.excerpt}
+                  dangerouslySetInnerHTML={{ __html: node.snippet }}
+                />
               </Link>
             </div>
           )
@@ -69,7 +77,8 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt(pruneLength: 500)
+          snippet
+          excerpt(format: HTML, pruneLength: 500)
           timeToRead
           fields {
             slug

@@ -1,14 +1,18 @@
 ---
-title: "Python Decorators"
+title: "Learn Python decorators to simplify repeated pieces of logic"
 date: "2018-12-30"
 tags:
 - python
 - decorators
 - programming
+- tutorial
+- functional programming
+- composed functions
 published: true
 ---
 
-Whether you are a beginner or an advanced programmer, there are many reasons why you should choose Python for your next coding project. Python is a scripted language with an almost stupidly simple syntax, it is easy to learn and powerful to use. One of the main reasons that ~~I love~~ people love Python is that it offers quite a few specific metaphors (a.k.a. paradigms) for doing certain things. One of these things involves wrapping functions with some repetitively used code. And so, in your quest to becoming a true Pythonista lie a type function that will help you improve and streamline your code: **decorators**.
+[[snippet]]
+| Whether you are a beginner or an advanced programmer, there are many reasons why you should choose Python for your next coding project. Python is a scripted language with an almost stupidly simple syntax, it is easy to learn and powerful to use. One of the main reasons that ~~I love~~ people love Python is that it offers quite a few specific metaphors (a.k.a. paradigms) for doing certain things. One of these things involves wrapping functions with some repetitively used code. And so, in your quest to becoming a true Pythonista lie a type function that will help you improve and streamline your code: **decorators**.
 
 ## Wrapping a function
 
@@ -71,7 +75,7 @@ In Python we strive to do the minimum that gets the job done. That's the essence
 
 However, there are times when keeping things primitive only makes the overall picture increasingly complicated. This is especially true when our application performs lots of repetitive tasks. This is where the magic of Python lies: Python allows you to extend your code in a simple way, without introducing much overhead. For that purpose it offers a number of coding paradigms, one of which we're going to be using today: **decorators**.
 
-> Decorators are repeatable bit of code that you want to run **before** and **after** some function execution.
+#### _Decorators are repeatable bit of code that you want to run **before** and **after** some function execution._
 
 In our example we wrote 3 lines of code within our `call_api` function in order to keep track of how long the api takes to respond. Imagine now that we have multiple different functions that call different API endpoints and we would also like to time them. If we keep doing it the same way as we did earlier, a lot of code would start to get duplicated.
 
@@ -405,10 +409,6 @@ timer = TimeMe(milliseconds=True)
 def some_func_1(x):
     return 2*x
 
-# 
-# or
-#
-
 @TimeMe(milliseconds=True)
 def some_func_2(x):
     return 3*x
@@ -420,7 +420,12 @@ print('result: ', some_func_1(100))
 print('result: ', some_func_2(100))
 ```
 
-    milliseconds: 0.00095367431640625
-    result:  200
-    milliseconds: 0.0021457672119140625
-    result:  300
+```shell
+milliseconds: 0.00095367431640625
+result:  200
+milliseconds: 0.0021457672119140625
+result:  300
+```
+
+Thank you for reading ! 
+

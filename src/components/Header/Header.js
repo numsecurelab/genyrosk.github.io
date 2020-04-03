@@ -7,6 +7,7 @@ import Contacts from '../Contacts'
 import styles from './Header.module.scss'
 // import './Header.scss'
 import profileImage from '../../assets/img/profile_pic_888.jpg'
+// import profileImage from '../../assets/img/golden_gate_pic_2_2.jpg'
 
 // const DescriptionParagraph = () => (
 //   <p>

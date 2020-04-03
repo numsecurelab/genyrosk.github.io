@@ -35,9 +35,12 @@
  * - vs
  * - xonokai
  */
-require("prism-themes/themes/prism-xonokai.css")
+// require("prism-themes/themes/prism-xonokai.css")
+require("prismjs/themes/prism.css")
+require("prismjs/plugins/line-numbers/prism-line-numbers.css")
+require("prismjs/plugins/command-line/prism-command-line.css")
 
 /*
  * Base css
  */
-// require('./src/assets/scss/init.scss');
+require('./src/assets/scss/init.scss');
