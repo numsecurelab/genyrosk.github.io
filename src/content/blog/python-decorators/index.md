@@ -1,6 +1,6 @@
 ---
 title: "Learn Python decorators to simplify repeated pieces of logic"
-date: "2020-04-04"
+date: "2020-04-03"
 tags:
 - python
 - decorators

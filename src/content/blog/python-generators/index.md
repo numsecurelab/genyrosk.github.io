@@ -1,6 +1,6 @@
 ---
 title: "A gentle introduction to Python generators"
-date: "2020-04-03"
+date: "2020-04-02"
 tags:
 - python
 - decorators
