@@ -1,6 +1,6 @@
 ---
 title: "Build a request limiter using Python context managers (and decorators)"
-date: "2018-12-31"
+date: "2020-04-04"
 tags:
 - python
 - context manager
@@ -13,11 +13,13 @@ published: true
 
 ## A real problem I encountered
 
-While learning to use Python Context Managers, I encountered a neat use case for them. At the time I was writing a data pipeline that was heavily querying an API and I would often quickly reach the API quota limits and my script would abruptly quit. My initial solution was to catch the exception and implement a loop that would try again after a time delay. It was a quick and dirty solution with a lot of boilerplate code, but it worked as a first approach. Later I found myself in the same problem when querying a different API and I realised that a more structured approach was necessary. 
+[[snippet]]
+| While learning to use Python Context Managers, I encountered a neat use case for them. At the time I was writing a data pipeline that was heavily querying an API and I would often quickly reach the **API quota limits** and the script would abruptly quit. My initial solution was to catch the exception and implement a loop that would try again after a time delay. It was a quick and dirty solution with a lot of boilerplate code, but it worked as a first approach. Later I found myself in the same problem when querying a different API and I realised that a more structured approach was necessary. 
 
 Some time later I found out the existence of the [ratelimiter](https://github.com/RazerM/ratelimiter) package, and to my surprise: it also used context managers and the code looked very similar ! In addition, the package features a very neat usage of the decorator syntax and implements both synchronous and asynchronous versions.  
 
-In this article we are going to go through the basics of the context manager functionality, and then see it in action when implemented into a rate limiter class. 
+[[snippet]]
+| In this article we are going to go through the **basics of the context manager functionality**, and then see it in action when implemented into a rate limiter class. 
 
 
 ## The purpose of context managers 

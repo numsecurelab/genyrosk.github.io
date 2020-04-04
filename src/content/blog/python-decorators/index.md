@@ -1,6 +1,6 @@
 ---
 title: "Learn Python decorators to simplify repeated pieces of logic"
-date: "2018-12-30"
+date: "2020-04-04"
 tags:
 - python
 - decorators
@@ -12,7 +12,7 @@ published: true
 ---
 
 [[snippet]]
-| Whether you are a beginner or an advanced programmer, there are many reasons why you should choose Python for your next coding project. Python is a scripted language with an almost stupidly simple syntax, it is easy to learn and powerful to use. One of the main reasons that ~~I love~~ people love Python is that it offers quite a few specific metaphors (a.k.a. paradigms) for doing certain things. One of these things involves wrapping functions with some repetitively used code. And so, in your quest to becoming a true Pythonista lie a type function that will help you improve and streamline your code: **decorators**.
+| Whether you are a beginner or an advanced programmer, there are many reasons why you should choose Python for your next coding project. Python is a scripted language with an almost _stupidly simple_ syntax, it is *easy to learn and powerful to use. One of the main reasons that ~~I love~~ people love Python is that it offers quite a few specific metaphors (a.k.a. paradigms) for doing certain things. One of these things involves **wrapping functions with some repetitively used code**. And so, in your quest to becoming a true Pythonista lie a type function that will help you improve and streamline your code: **decorators**.
 
 ## Wrapping a function
 

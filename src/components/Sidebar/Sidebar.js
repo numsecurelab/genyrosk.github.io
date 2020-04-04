@@ -7,8 +7,6 @@ import { ReactComponent as CloseLogo } from '../../assets/img/close.svg'
 import Contacts from '../Contacts'
 import styles from './Sidebar.module.scss'
 
-console.log('MenuLogo ===++>', MenuLogo)
-
 const SpringButton = ({ toggled, setToggled }) => {
   const { opacity, transform, scale } = useSpring({
     opacity: toggled ? 1 : 0,

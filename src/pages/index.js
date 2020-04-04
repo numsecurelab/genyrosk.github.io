@@ -8,7 +8,6 @@ import SEO from '../components/SEO'
 import styles from './index.module.scss'
 
 const IndexPage = ({ data }) => {
-  const posts = data.allMarkdownRemark.edges
   return (
     <Layout>
       <SEO
