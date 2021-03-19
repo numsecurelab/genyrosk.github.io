@@ -1,6 +1,8 @@
 ---
-title: "Build a request limiter using Python context managers (and decorators)"
-date: "2020-04-04"
+title: Build a request limiter using Python context managers (and decorators)
+description: Prevent running into API quota limits and reduce code boilerplate by making use of the Python context manager to limit the number of requests that you're making per unit of time.
+date: 2020-04-04
+featuredImage: ./network.jpg
 tags:
 - python
 - context manager

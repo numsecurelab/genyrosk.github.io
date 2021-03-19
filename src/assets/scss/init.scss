@@ -7,13 +7,13 @@ body {
  * https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/
  */
 .gatsby-highlight-code-line {
-  background-color: #feb;
+  background-color: #385471;
   display: block;
   margin-right: -1em;
   margin-left: -1em;
   padding-right: 1em;
   padding-left: 0.75em;
-  border-left: 0.25em solid #f99;
+  border-left: 0.35em solid #f99;
 }
 
 /**
@@ -21,7 +21,7 @@ body {
  * and overflow that we removed from <pre>.
  */
 .gatsby-highlight {
-  background-color: #fdf6e3;
+  background-color: #282a36;
   border-radius: 0.3em;
   margin: 0.5em 0;
   padding: 1em;
@@ -42,7 +42,7 @@ body {
   padding: 0;
   overflow: initial;
   float: left; // 1
-  min-width: 100%; // 2 
+  min-width: 100%; // 2
 }
 
 /* Adjust the position of the line numbers */

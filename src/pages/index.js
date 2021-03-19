@@ -1,62 +1,51 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
-import { css } from '@emotion/core'
-import { rhythm } from '../utils/typography'
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
+import { graphql } from 'gatsby'
+import styled, { css } from 'styled-components'
 
-import styles from './index.module.scss'
+import { LayoutWithProfile, MainTitle, ArticlePreview, SEO } from '../components'
+import { useMobileView } from '../utils/hooks'
+
+
+const MainContentWrapper = styled.div`
+  align-self: flex-start;
+`
+const MainContent = styled.div`
+  max-width: 650px;
+  padding: 20px 0;
+  margin: 0 auto;
+  ${({ isMobile }) => isMobile && css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  `}
+`
+const ArticlesList = styled.div``
 
 const IndexPage = ({ data }) => {
+  const isMobile = useMobileView()
   return (
-    <Layout>
+    <LayoutWithProfile>
       <SEO
         title="Home"
-        keywords={[`evgeny`, `blog`, `python`, `data science`]}
+        keywords={[`programming`, `blog`, `python`, `data science`, `coding`]}
       />
-      <div className={styles.blogpostsList}>
-        {data.allMarkdownRemark.edges.map(({ node }) => {
-          return (
-            <div key={node.id} className={styles.blogpost}>
-              <Link
-                to={node.fields.slug}
-                css={css`
-                  text-decoration: none;
-                  color: inherit;
-                `}
-              >
-                <h3
-                  css={css`
-                    margin-top: ${rhythm(1 / 1)};
-                    margin-bottom: ${rhythm(1 / 3)};
-                  `}
-                >
-                  {node.frontmatter.title}
-                </h3>
-                <h4
-                  css={css`
-                    color: #777;
-                    margin-top: 0;
-                    margin-bottom: ${rhythm(1 / 2)};
-                  `}
-                >
-                  {node.frontmatter.date} &#183; {node.timeToRead} min read
-                </h4>
-                {/* <p>{node.excerpt}</p> */}
-                {/* <div
-                  className={styles.excerpt}
-                  dangerouslySetInnerHTML={{ __html: node.excerpt }}
-                /> */}
-                <div
-                  className={styles.excerpt}
-                  dangerouslySetInnerHTML={{ __html: node.snippet }}
-                />
-              </Link>
-            </div>
-          )
-        })}
-      </div>
-    </Layout>
+      <MainContent isMobile={isMobile}>
+        <MainContentWrapper>
+          <MainTitle>Latest posts</MainTitle>
+        </MainContentWrapper>
+        <ArticlesList>
+          {data.allMarkdownRemark.edges.map(({ node }) => {
+            let imgSrc = node.frontmatter.featuredImage?.childImageSharp.fluid.src
+            let featuredImgFluid = node.frontmatter.featuredImage?.childImageSharp.fluid
+            console.log('node featuredImgFluid ==>', { frontmatter: node.frontmatter, imgSrc, featuredImgFluid })
+            return (
+              <ArticlePreview article={node} />
+            )
+          })}
+        </ArticlesList>
+      </MainContent>
+    </LayoutWithProfile>
   )
 }
 
@@ -85,6 +74,15 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMM DD, YYYY")
             title
+            description
+            tags
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
