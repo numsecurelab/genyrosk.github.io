@@ -1,6 +1,8 @@
 ---
 title: "Learn Python decorators to simplify repeated pieces of logic"
+# description: Prevent running into API quota limits and reduce code boilerplate by making use of the Python context manager to limit the number of requests that you're making per unit of time.
 date: "2020-04-03"
+featuredImage: ./coffee.jpg
 tags:
 - python
 - decorators

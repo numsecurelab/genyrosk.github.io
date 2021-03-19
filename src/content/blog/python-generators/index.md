@@ -1,6 +1,8 @@
 ---
 title: "A gentle introduction to Python generators"
+# description:
 date: "2020-04-02"
+featuredImage: ./planets.jpg
 tags:
 - python
 - decorators

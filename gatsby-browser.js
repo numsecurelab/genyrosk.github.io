@@ -17,7 +17,6 @@
  * - atom-dark
  * - base16-ateliersulphurpool.light
  * - cb
- * - darcula
  * - dracula
  * - duotone-dark
  * - duotone-earth
@@ -35,12 +34,22 @@
  * - vs
  * - xonokai
  */
-// require("prism-themes/themes/prism-xonokai.css")
-require("prismjs/themes/prism.css")
+// require("prismjs/themes/prism-dark.css")
+require("prism-themes/themes/prism-dracula.css")
+// require("prismjs/themes/prism.css")
 require("prismjs/plugins/line-numbers/prism-line-numbers.css")
 require("prismjs/plugins/command-line/prism-command-line.css")
 
 /*
  * Base css
  */
-require('./src/assets/scss/init.scss');
+require('./src/assets/scss/init.scss')
+
+import React from 'react'
+import { Root } from './src/components/Root'
+
+export const wrapRootElement = ({ element }) => {
+  return (
+    <Root>{element}</Root>
+  )
+}
