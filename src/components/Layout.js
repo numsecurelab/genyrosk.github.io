@@ -74,16 +74,6 @@ export const MainTitle = ({ children }) => (
 
 export const BaseLayout = ({ children }) => {
   const isMobile = useMobileView()
-  console.log("BaseLayout ===>", { isMobile })
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery2 {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
 
   return (
     <Body isMobile={isMobile}>
@@ -94,10 +84,8 @@ export const BaseLayout = ({ children }) => {
   )
 }
 
-// export const LayoutWithProfile
 export const LayoutWithProfile = ({ children }) => {
   const isMobile = useMobileView()
-  console.log('LayoutWithProfile ===>', { isMobile })
 
   return (
     <BaseLayout>
@@ -111,11 +99,8 @@ export const LayoutWithProfile = ({ children }) => {
   )
 }
 
-
 export const LayoutJustNav = ({ children }) => {
-
   const isMobile = useMobileView()
-  console.log('LayoutJustNav ===>', { isMobile })
 
   return (
     <BaseLayout>

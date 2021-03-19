@@ -172,7 +172,7 @@ const FaMoonStyled = styled(FaMoon)`
 
 const DarkModeToggleBtn = () => {
   const { setIsDark, isDark } = useContext(DarkModeContext)
-  console.log('DarkModeToggleBtn ==>', { isDark })
+
   return (
     <ToggleBtn>
       <InvisibleBtn>

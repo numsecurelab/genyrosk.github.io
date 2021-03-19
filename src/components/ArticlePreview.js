@@ -107,7 +107,6 @@ export const ArticlePreview = ({ article, ...rest }) => {
     frontmatter,
   } = article
   let featuredImgFluid = article.frontmatter.featuredImage?.childImageSharp.fluid
-  console.log('featuredImgFluid', featuredImgFluid)
 
   return (
       <Article key={id} {...rest}>

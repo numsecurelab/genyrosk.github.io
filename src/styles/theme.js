@@ -1,4 +1,4 @@
-import { useState, createContext } from 'react'
+import { useState, useEffect, createContext } from 'react'
 
 const DARK = 'dark'
 const LIGHT = 'light'
@@ -113,23 +113,26 @@ export const useTheme = (_theme) => {
   return [theme, toggleTheme]
 }
 
-export const DarkModeContext = createContext()
+export const DarkModeContext = createContext({})
 
 export const useDarkModeTheme = () => {
-  // get localStorage value
-  const isLocalDark = window.localStorage.getItem('theme') === 'dark'
-  const [isDark, _setIsDark] = useState(isLocalDark)
+  // initialize as false and wait for render
+  const [isDark, _setIsDark] = useState(false)
   const theme = isDark ? darkTheme : lightTheme
+
+  // get localStorage value upon render
+  useEffect(() => {
+    const isLocalDark = window.localStorage.getItem('theme') === 'dark'
+    _setIsDark(isLocalDark)
+  }, [])
 
   //
   const toggleDarkMode = () => {
-    console.log("toggleDarkMode ==================>", !isDark)
     window.localStorage.setItem('theme', !isDark ? 'light' : 'dark')
     _setIsDark(isDark => !isDark)
   }
 
   const setIsDark = (isDark) => {
-    console.log("setIsDark ==================>", isDark)
     window.localStorage.setItem('theme', isDark ? 'dark' : 'light')
     _setIsDark(isDark)
   }

@@ -36,11 +36,8 @@ const IndexPage = ({ data }) => {
         </MainContentWrapper>
         <ArticlesList>
           {data.allMarkdownRemark.edges.map(({ node }) => {
-            let imgSrc = node.frontmatter.featuredImage?.childImageSharp.fluid.src
-            let featuredImgFluid = node.frontmatter.featuredImage?.childImageSharp.fluid
-            console.log('node featuredImgFluid ==>', { frontmatter: node.frontmatter, imgSrc, featuredImgFluid })
             return (
-              <ArticlePreview article={node} />
+              <ArticlePreview article={node} key={node.id} />
             )
           })}
         </ArticlesList>
