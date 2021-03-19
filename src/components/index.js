@@ -1,7 +1,7 @@
 export { ArticlePreview } from './ArticlePreview'
 export { Footer } from './Footer'
 export { HeaderNavWithProfile, HeaderNav } from './Header'
-export { LayoutJustNav, LayoutWithProfile } from './Layout'
+export { LayoutJustNav, LayoutWithProfile, MainTitle } from './Layout'
 export { Nav } from './NavBar'
 export { ProfileImage } from './Profile'
 export { Root } from './Root'
